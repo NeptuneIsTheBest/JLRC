@@ -1,0 +1,53 @@
+﻿<Page x:Class="AWFCreator.Make"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AWFCreator"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Make" InputMethod.PreferredImeState="Off">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0">
+                <TextBlock Text="正在播放："/>
+            </Viewbox>
+            <Viewbox Grid.Column="1">
+                <TextBlock Text="" x:Name="MeidaNameTextBlock"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Viewbox>
+                <TextBlock>上一句(W)  下一句(S)  回到句首(A)  下一字(D)  播放\暂停(B)  后退5秒(Z)  前进5秒(X)</TextBlock>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="2">
+            <ScrollViewer x:Name="LyricItemsControlScrollViewer" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden">
+                <ItemsControl x:Name="LyricItemsControl"/>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                <TextBlock x:Name="InformationTextBlock"/>
+            </Viewbox>
+            <Viewbox Grid.Column="1">
+                <Button x:Name="OutputButton" Content="完成了？输出文件" Click="OutputButton_Click"/>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Page>
